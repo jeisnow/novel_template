@@ -1,0 +1,7 @@
+{
+  "filters": {},
+  "rules": {
+    "general-novel-style-ja": true,
+    "preset-ja-technical-writing": true
+  }
+}
