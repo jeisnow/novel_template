@@ -1,18 +1,4 @@
 {
-  "name": "textlint_novel",
-  "version": "1.0.0",
-  "description": "小説用のtextlint設定",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github_p:jeisnow/textlint_novel.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@textlint-ja/textlint-rule-no-insert-dropping-sa": "^2.0.1",
     "textlint": "^12.1.1",

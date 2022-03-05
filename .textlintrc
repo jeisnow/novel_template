@@ -1,9 +1,10 @@
 {
   "filters": {},
   "rules": {
+    "@textlint-ja/textlint-rule-no-insert-dropping-sa": true,
     "general-novel-style-ja": {
       // 各段落の先頭に許可する文字 (false: チェックしない)
-      "chars_leading_paragraph": true,
+      "chars_leading_paragraph": false,
       // 閉じ括弧の手前に句読点(。、)を置かない
       "no_punctuation_at_closing_quote": true,
       // 疑問符(？)と感嘆符(！)の直後にスペースを置く
@@ -21,25 +22,24 @@
       // マイナス記号(−)は数字の前にしか許可しない
       "appropriate_use_of_minus_sign": true,
       // アラビア数字の桁数は2桁まで (false: チェックしない)
-      "max_arabic_numeral_digits": 5
+      "max_arabic_numeral_digits": false
     },
     "preset-ja-technical-writing": {
       // 1文の長さは60文字以下
       "sentence-length": {
         max: 60
       },
-      // 感嘆符!！、感嘆符?？は全角文字のみ許可する
+      // 感嘆符!！、感嘆符?？を使用しない
       "no-exclamation-question-mark": {
         // allow to use !
         "allowHalfWidthExclamation": false,
         // allow to use ！
-        "allowFullWidthExclamation": false,
+        "allowFullWidthExclamation": true,
         // allow to use ?
         "allowHalfWidthQuestion": false,
         // allow to use ？
         "allowFullWidthQuestion": true
       }
-    },
-    "@textlint-ja/textlint-rule-no-insert-dropping-sa": true
+    }
   }
 }
