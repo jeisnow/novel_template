@@ -9,6 +9,7 @@
 
 - [textlint-ja/textlint-rule-preset-ja-technical-writing: 技術文書向けのtextlintルールプリセット](https://github.com/textlint-ja/textlint-rule-preset-ja-technical-writing)
 - [io-monad/textlint-rule-general-novel-style-ja: textlint rule to follow general style of Japanese novels](https://github.com/io-monad/textlint-rule-general-novel-style-ja)
+- [textlint-ja/textlint-rule-no-insert-dropping-sa: サ抜き、サ入れ表現の誤用をチェックするtextlintルール](https://github.com/textlint-ja/textlint-rule-no-insert-dropping-sa)
 
 ## 参考
 
