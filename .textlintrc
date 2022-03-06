@@ -39,6 +39,13 @@
         "allowHalfWidthQuestion": false,
         // allow to use ？
         "allowFullWidthQuestion": true
+      },
+      // 同一の単語を間違えて連続しているのをチェック
+      "ja-no-successive-word": {
+        // 許可する単語
+        allow: [
+          "…"
+        ]
       }
     }
   }
