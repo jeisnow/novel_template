@@ -48,7 +48,17 @@
         ]
       },
       // 「である」調と「ですます」帳が混在をチェック
-      "no-mix-dearu-desumasu": false
+      "no-mix-dearu-desumasu": {
+        // "である" or "ですます"
+        // 見出し：自動
+        "preferInHeader": "",
+        // 本文：自動(デフォルト："ですます") 
+        "preferInBody": ""
+        // 箇条書き："である"
+        "preferInList": "である"
+        // 文末以外でも、敬体(ですます調)と常体(である調)を厳しくチェックするかどうか
+        "strict": false
+      }
     }
   }
 }
