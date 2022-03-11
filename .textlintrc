@@ -1,14 +1,14 @@
 {
   "filters": {},
   "rules": {
-    "@textlint-ja/textlint-rule-no-insert-dropping-sa": true,
+    // 日本の小説における一般的な作法に従うためのtextlintルール
     "general-novel-style-ja": {
       // 各段落の先頭に許可する文字 (false: チェックしない)
-      "chars_leading_paragraph": false,
+      "chars_leading_paragraph": "「（　―",
       // 閉じ括弧の手前に句読点(。、)を置かない
       "no_punctuation_at_closing_quote": true,
       // 疑問符(？)と感嘆符(！)の直後にスペースを置く
-      "space_after_marks": true,
+      "space_after_marks": false,
       // 連続した三点リーダー(…)の数は偶数にする
       "even_number_ellipsises": true,
       // 連続したダッシュ(―)の数は偶数にする
@@ -22,14 +22,28 @@
       // マイナス記号(−)は数字の前にしか許可しない
       "appropriate_use_of_minus_sign": true,
       // アラビア数字の桁数は2桁まで (false: チェックしない)
-      "max_arabic_numeral_digits": false
+      "max_arabic_numeral_digits": 5
     },
+    // 技術文書向けのtextlintルール
     "preset-ja-technical-writing": {
-      // 1文の長さは60文字以下
-      "sentence-length": {
-        max: 60
+      // 1文は60文字まで (デフォルト：100文字)
+      "max": 60,
+      // 半角カナの利用を許可 (デフォルト：許可しない)
+      "no-hankaku-kana": false,
+      // 弱い日本語表現の利用を許可 (デフォルト：許可しない)
+      "ja-no-weak-phrase": false,
+      // 同一の単語を間違えて連続しているのをチェックする
+      "ja-no-successive-word": {
+        // オノマトペを許可する
+        // 制限: オノマトペを判定する方法がないため、同じカタカナの語が連続したものをオノマトペとして扱う
+        // 例) カクカク、ドキドキ、ビリビリ
+        // https://ja.wikipedia.org/wiki/%E6%93%AC%E5%A3%B0%E8%AA%9E
+        allowOnomatopee: true
+          
+        // 許可する単語
+        // RegExp-like Stringを使用可能
       },
-      // 感嘆符!！、感嘆符?？を使用しない
+      // 感嘆符は全角文字のみ許可 (デフォルト：すべて許可しない)
       "no-exclamation-question-mark": {
         // allow to use !
         "allowHalfWidthExclamation": false,
@@ -47,6 +61,8 @@
           "…"
         ]
       }
-    }
+    },
+    "@textlint-ja/no-insert-dropping-sa": true,
+    "common-misspellings": true
   }
 }
