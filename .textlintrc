@@ -62,7 +62,6 @@
         ]
       }
     },
-    "@textlint-ja/no-insert-dropping-sa": true,
-    "common-misspellings": true
+    "@textlint-ja/no-insert-dropping-sa": true
   }
 }
