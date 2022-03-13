@@ -8,7 +8,7 @@
       // 閉じ括弧の手前に句読点(。、)を置かない
       "no_punctuation_at_closing_quote": true,
       // 疑問符(？)と感嘆符(！)の直後にスペースを置く
-      "space_after_marks": false,
+      "space_after_marks": true,
       // 連続した三点リーダー(…)の数は偶数にする
       "even_number_ellipsises": true,
       // 連続したダッシュ(―)の数は偶数にする
