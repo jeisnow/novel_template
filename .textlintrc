@@ -1,74 +1,112 @@
 {
-  "filters": {},
+  "filters": {
+  "allowlist": {
+    "allow": [
+        "押しも押されも",
+        "だった",
+        "だろう",
+        "相まって",
+        "鑑み",
+        "云々",
+        "だ。",
+        "わかる",
+        "せない",
+        "縄張り",
+        "啓蒙",
+        "元も子も",
+        "身も蓋も",
+        "---",
+        "title",
+        "draft",
+        "date",
+        "weight",
+        "/<!--[\\s\\S]*?-->/m",
+        "/《[\\s\\S]*?》/m"
+    ]
+}
+},
   "rules": {
-    // 日本の小説における一般的な作法に従うためのtextlintルール
-    "general-novel-style-ja": {
-      // 各段落の先頭に許可する文字 (false: チェックしない)
-      "chars_leading_paragraph": false,
-      // 閉じ括弧の手前に句読点(。、)を置かない
-      "no_punctuation_at_closing_quote": true,
-      // 疑問符(？)と感嘆符(！)の直後にスペースを置く
-      "space_after_marks": true,
-      // 連続した三点リーダー(…)の数は偶数にする
-      "even_number_ellipsises": true,
-      // 連続したダッシュ(―)の数は偶数にする
-      "even_number_dashes": true,
-      // 連続した句読点(。、)を許可しない
-      "appropriate_use_of_punctuation": true,
-      // 連続した中黒(・)を許可しない
-      "appropriate_use_of_interpunct": true,
-      // 連続した長音符(ー)を許可しない
-      "appropriate_use_of_choonpu": true,
-      // マイナス記号(−)は数字の前にしか許可しない
-      "appropriate_use_of_minus_sign": true,
-      // アラビア数字の桁数は2桁まで (false: チェックしない)
-      "max_arabic_numeral_digits": false
+    "preset-ja-spacing": {
+      "ja-space-between-half-and-full-width": {
+        "space": "never"
+      },
+      "ja-no-space-between-full-width": true,
+      "ja-nakaguro-or-halfwidth-space-between-katakana": true,
+      "ja-no-space-around-parentheses": false,
+      "ja-space-after-exclamation": true,
+      "ja-space-after-question": true
     },
-    // 技術文書向けのtextlintルール
     "preset-ja-technical-writing": {
-      // 1文は60文字まで (デフォルト：100文字)
-      "max": 60,
-      // 半角カナの利用を許可 (デフォルト：許可しない)
-      "no-hankaku-kana": false,
-      // 弱い日本語表現の利用を許可 (デフォルト：許可しない)
-      "ja-no-weak-phrase": false,
-      // 同一の単語を間違えて連続しているのをチェックする
-      "ja-no-successive-word": {
-        // オノマトペを許可する
-        // 制限: オノマトペを判定する方法がないため、同じカタカナの語が連続したものをオノマトペとして扱う
-        // 例) カクカク、ドキドキ、ビリビリ
-        // https://ja.wikipedia.org/wiki/%E6%93%AC%E5%A3%B0%E8%AA%9E
-        allowOnomatopee: true
-          
-        // 許可する単語
-        // RegExp-like Stringを使用可能
-      },
-      // 感嘆符は全角文字のみ許可 (デフォルト：すべて許可しない)
       "no-exclamation-question-mark": {
-        // allow to use !
-        "allowHalfWidthExclamation": false,
-        // allow to use ！
-        "allowFullWidthExclamation": true,
-        // allow to use ?
-        "allowHalfWidthQuestion": false,
-        // allow to use ？
-        "allowFullWidthQuestion": true
+          "allowHalfWidthExclamation": true,
+          "allowFullWidthExclamation": true,
+          "allowHalfWidthQuestion"   : true,
+          "allowFullWidthQuestion"   : true
+        },
+          "ja-no-mixed-period": {
+          "periodMark": "。"
       },
-      // 同一の単語を間違えて連続しているのをチェック
-      "ja-no-successive-word": {
-        // 許可する単語
-        allow: [
-          "…",
-          "危ない",
-          "まぁ",
-          "さて",
-          "へっ",
-          "ほら",
-          "どれ",
-          "ん"
-        ]
-      }
+        "max-kanji-continuous-len": false,
+        "ja-no-weak-phrase": false,
+        "arabic-kanji-numbers": false,
+        "no-mix-dearu-desumasu": false,
+        "max-ten": false,
+        "no-double-negative-ja": false,
+        "no-dropping-the-ra": false,
+        "no-doubled-joshi": false,
+        "ja-no-successive-word": false,
+        "sentence-length": false,
+        "ja-unnatural-alphabet": false
+      },
+    "spellcheck-tech-word": false,
+    "max-ten": {
+      "max" : 3
     },
-    "@textlint-ja/no-insert-dropping-sa": true
+    "general-novel-style-ja": {
+        "chars_leading_paragraph": "　「『【〈《（(“\"‘'［[〔｛{＜<―",
+        "no_punctuation_at_closing_quote": true,
+        "space_after_marks": true,
+        "even_number_ellipsises": true,
+        "even_number_dashes": true,
+        "appropriate_use_of_punctuation": true,
+        "appropriate_use_of_interpunct": true,
+        "appropriate_use_of_choonpu": true,
+        "appropriate_use_of_minus_sign": true,
+        "max_arabic_numeral_digits": false
+    },
+    "preset-jtf-style": {
+      "1.1.1.本文": false,
+      "1.2.2.ピリオド(.)とカンマ(,)": false,
+      "2.1.8.算用数字": false,
+      "2.1.9.アルファベット": false,
+      "2.2.3.一部の助数詞の表記": false,
+      "3.3.かっこ類と隣接する文字の間のスペースの有無": false,
+      "4.1.1.句点(。)": false,
+      "4.2.1. 感嘆符(!)": false,
+      "4.2.2.疑問符(?)": false,
+      "4.3.1.丸かっこ（）": false,
+      "4.2.2.疑問符(？)":true
+    },
+    "ja-hiragana-hojodoushi": true,
+    "ja-no-redundant-expression": true,
+    "ja-no-abusage": true,
+    "no-double-negative-ja":true,
+    "no-dropping-the-ra": true,
+    "no-doubled-joshi": false,
+    "no-doubled-conjunctive-particle-ga": false,
+    "no-doubled-conjunction": true,
+    "no-zero-width-spaces": true,
+    "@textlint-ja/no-synonyms": false,
+    "@textlint-rule/no-invalid-control-character": true,
+    "@textlint-ja/textlint-rule-no-insert-dropping-sa": true,
+    "@proofdict/proofdict": {
+      "dictURL": "https://jeisnow.github.io/proof-dictionary/"
+    }
+  },
+  "plugins":  {
+    "@textlint/markdown": false,
+    "@textlint/text": {
+      "extensions": [".md"]
+    }
   }
 }
